@@ -1,0 +1,56 @@
+name: Evening fixtures check (6pm NZ)
+
+on:
+  schedule:
+    # 6:00 PM NZST (UTC+12) = 06:00 UTC same day
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+    inputs:
+      test_mode:
+        description: "Run in test mode (sends [TEST] emails, no git commit)"
+        required: false
+        default: "false"
+        type: choice
+        options:
+          - "true"
+          - "false"
+
+permissions:
+  contents: write
+
+jobs:
+  evening-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run evening watcher
+        env:
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+        run: |
+          if [ "${{ github.event.inputs.test_mode }}" = "true" ]; then
+            python -m watcher.main evening --test
+          else
+            python -m watcher.main evening
+          fi
+
+      - name: Push updated files
+        if: ${{ github.event.inputs.test_mode != 'true' }}
+        run: |
+          git config user.name "selwyn-watcher[bot]"
+          git config user.email "selwyn-watcher@noreply.github.com"
+          git add snapshot.json season_schedule_2ndxi.md season_schedule_13a.md docs/ || true
+          git diff --cached --quiet || git commit -m "chore: evening update $(date -u +%Y-%m-%d)"
+          git push || true

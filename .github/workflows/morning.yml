@@ -1,0 +1,57 @@
+name: Morning fixtures check (7am NZ)
+
+on:
+  schedule:
+    # 7:00 AM NZST (UTC+12) = 19:00 UTC previous day
+    # Football season May–August is NZST (no daylight saving)
+    - cron: "0 19 * * *"
+  workflow_dispatch:
+    inputs:
+      test_mode:
+        description: "Run in test mode (sends [TEST] emails, no git commit)"
+        required: false
+        default: "false"
+        type: choice
+        options:
+          - "true"
+          - "false"
+
+permissions:
+  contents: write
+
+jobs:
+  morning-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run morning watcher
+        env:
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+        run: |
+          if [ "${{ github.event.inputs.test_mode }}" = "true" ]; then
+            python -m watcher.main morning --test
+          else
+            python -m watcher.main morning
+          fi
+
+      - name: Push updated files
+        if: ${{ github.event.inputs.test_mode != 'true' }}
+        run: |
+          git config user.name "selwyn-watcher[bot]"
+          git config user.email "selwyn-watcher@noreply.github.com"
+          git add snapshot.json season_schedule_2ndxi.md season_schedule_13a.md docs/ || true
+          git diff --cached --quiet || git commit -m "chore: morning update $(date -u +%Y-%m-%d)"
+          git push || true
