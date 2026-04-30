@@ -1,0 +1,30 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Selwyn Football Watcher//Selwyn 13A Boys//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALDESC:Fixtures and training for Selwyn 13A Boys 2026. Auto-updated 
+ from Sporty / College Sport.
+X-WR-CALNAME:Selwyn 13A Boys Fixtures 2026
+X-WR-TIMEZONE:Pacific/Auckland
+BEGIN:VEVENT
+SUMMARY:Selwyn 13A Boys vs Howick College (HOME)
+DTSTART;TZID=Pacific/Auckland:20260502T090000
+DTEND;TZID=Pacific/Auckland:20260502T110000
+UID:selwyn-13a-fixture-6595709@selwyn-football-watcher.github.io
+SEQUENCE:0
+DESCRIPTION:13A2\, ROUND 1\nArrive 8:00 AM for warm-up
+GEO:-36.8626137;174.84021
+LOCATION:Selwyn College: Field 1\, Selwyn College
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Selwyn 13A Boys Training
+DTSTART;TZID=Pacific/Auckland:20260505T070000
+DTEND;TZID=Pacific/Auckland:20260505T080000
+UID:selwyn-13a-training-2026@selwyn-football-watcher.github.io
+RRULE:FREQ=WEEKLY;UNTIL=20260825T070000;BYDAY=TU
+DESCRIPTION:Weekly training — Selwyn 13A Boys\nCoach: Mojtaba Sayed
+LOCATION:Selwyn College\, Front Field
+END:VEVENT
+END:VCALENDAR

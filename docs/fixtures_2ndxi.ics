@@ -1,0 +1,182 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Selwyn Football Watcher//Selwyn 2nd XI//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALDESC:Fixtures and training for Selwyn 2nd XI 2026. Auto-updated fr
+ om Sporty / College Sport.
+X-WR-CALNAME:Selwyn 2nd XI Fixtures 2026
+X-WR-TIMEZONE:Pacific/Auckland
+BEGIN:VEVENT
+SUMMARY:Selwyn 2nd XI vs St Peter's College (Epsom) (AWAY)
+DTSTART;TZID=Pacific/Auckland:20260424T160000
+DTEND;TZID=Pacific/Auckland:20260424T180000
+UID:selwyn-2ndxi-fixture-6333868@selwyn-football-watcher.github.io
+SEQUENCE:0
+DESCRIPTION:Premier League Reserve\, ROUND 1\nArrive 3:00 PM for warm-up\n
+ Map: https://maps.google.com/?q=-36.8677864\,174.769669
+GEO:-36.8677864;174.769669
+LOCATION:St Peter's College: Cage\, St Peter's College
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Selwyn 2nd XI vs Westlake Boys High School (HOME)
+DTSTART;TZID=Pacific/Auckland:20260501T154500
+DTEND;TZID=Pacific/Auckland:20260501T174500
+UID:selwyn-2ndxi-fixture-6333871@selwyn-football-watcher.github.io
+SEQUENCE:0
+DESCRIPTION:Premier League Reserve\, ROUND 2\nArrive 2:45 PM for warm-up
+GEO:-36.8626137;174.84021
+LOCATION:Selwyn College: Field 1\, Selwyn College
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Selwyn 2nd XI vs Saint Kentigern College (AWAY)
+DTSTART;TZID=Pacific/Auckland:20260509T100000
+DTEND;TZID=Pacific/Auckland:20260509T120000
+UID:selwyn-2ndxi-fixture-6333877@selwyn-football-watcher.github.io
+SEQUENCE:0
+DESCRIPTION:Premier League Reserve\, ROUND 3\nArrive 9:00 AM for warm-up\n
+ Map: https://maps.google.com/?q=-36.9097137\,174.875031
+GEO:-36.9097137;174.875031
+LOCATION:Saint Kentigern College: Field 1\, Saint Kentigern College
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Selwyn 2nd XI vs Takapuna Grammar School (HOME)
+DTSTART;TZID=Pacific/Auckland:20260516T100000
+DTEND;TZID=Pacific/Auckland:20260516T120000
+UID:selwyn-2ndxi-fixture-6333882@selwyn-football-watcher.github.io
+SEQUENCE:0
+DESCRIPTION:Premier League Reserve\, ROUND 4\nArrive 9:00 AM for warm-up
+GEO:-36.8626137;174.84021
+LOCATION:Selwyn College: Field 1\, Selwyn College
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Selwyn 2nd XI vs Howick College (HOME)
+DTSTART;TZID=Pacific/Auckland:20260523T100000
+DTEND;TZID=Pacific/Auckland:20260523T120000
+UID:selwyn-2ndxi-fixture-6333884@selwyn-football-watcher.github.io
+SEQUENCE:0
+DESCRIPTION:Premier League Reserve\, ROUND 5\nArrive 9:00 AM for warm-up
+GEO:-36.8626137;174.84021
+LOCATION:Selwyn College: Field 1\, Selwyn College
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Selwyn 2nd XI vs Mount Albert Grammar School (HOME)
+DTSTART;TZID=Pacific/Auckland:20260606T100000
+DTEND;TZID=Pacific/Auckland:20260606T120000
+UID:selwyn-2ndxi-fixture-6333890@selwyn-football-watcher.github.io
+SEQUENCE:0
+DESCRIPTION:Premier League Reserve\, ROUND 6\nArrive 9:00 AM for warm-up
+GEO:-36.8626137;174.84021
+LOCATION:Selwyn College: Field 1\, Selwyn College
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Selwyn 2nd XI vs Auckland Grammar School (AWAY)
+DTSTART;TZID=Pacific/Auckland:20260612T160000
+DTEND;TZID=Pacific/Auckland:20260612T180000
+UID:selwyn-2ndxi-fixture-6333893@selwyn-football-watcher.github.io
+SEQUENCE:0
+DESCRIPTION:Premier League Reserve\, ROUND 7\nArrive 3:00 PM for warm-up\n
+ Map: https://maps.google.com/?q=-36.86878\,174.769379
+GEO:-36.86878;174.769379
+LOCATION:Auckland Grammar School: Field 1\, Auckland Grammar School Memori
+ al
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Selwyn 2nd XI vs St Peter's College (Epsom) (HOME)
+DTSTART;TZID=Pacific/Auckland:20260627T100000
+DTEND;TZID=Pacific/Auckland:20260627T120000
+UID:selwyn-2ndxi-fixture-6333896@selwyn-football-watcher.github.io
+SEQUENCE:0
+DESCRIPTION:Premier League Reserve\, ROUND 8\nArrive 9:00 AM for warm-up
+GEO:-36.8626137;174.84021
+LOCATION:Selwyn College: Field 1\, Selwyn College
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Selwyn 2nd XI vs Westlake Boys High School (AWAY)
+DTSTART;TZID=Pacific/Auckland:20260704T100000
+DTEND;TZID=Pacific/Auckland:20260704T120000
+UID:selwyn-2ndxi-fixture-6333899@selwyn-football-watcher.github.io
+SEQUENCE:0
+DESCRIPTION:Premier League Reserve\, ROUND 9\nArrive 9:00 AM for warm-up\n
+ Map: https://maps.google.com/?q=-36.7773666\,174.7495
+GEO:-36.7773666;174.7495
+LOCATION:Westlake Boys High School: Field 1\, Westlake Boys High School
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Selwyn 2nd XI vs Saint Kentigern College (HOME)
+DTSTART;TZID=Pacific/Auckland:20260725T100000
+DTEND;TZID=Pacific/Auckland:20260725T120000
+UID:selwyn-2ndxi-fixture-6333905@selwyn-football-watcher.github.io
+SEQUENCE:0
+DESCRIPTION:Premier League Reserve\, ROUND 10\nArrive 9:00 AM for warm-up
+GEO:-36.8626137;174.84021
+LOCATION:Selwyn College: Field 1\, Selwyn College
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Selwyn 2nd XI vs Takapuna Grammar School (AWAY)
+DTSTART;TZID=Pacific/Auckland:20260801T100000
+DTEND;TZID=Pacific/Auckland:20260801T120000
+UID:selwyn-2ndxi-fixture-6333910@selwyn-football-watcher.github.io
+SEQUENCE:0
+DESCRIPTION:Premier League Reserve\, ROUND 11\nArrive 9:00 AM for warm-up\
+ nMap: https://maps.google.com/?q=-36.8006172\,174.788483
+GEO:-36.8006172;174.788483
+LOCATION:Takapuna Grammar School: Field 1\, Takapuna Grammar School
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Selwyn 2nd XI vs Howick College (AWAY)
+DTSTART;TZID=Pacific/Auckland:20260808T100000
+DTEND;TZID=Pacific/Auckland:20260808T120000
+UID:selwyn-2ndxi-fixture-6333912@selwyn-football-watcher.github.io
+SEQUENCE:0
+DESCRIPTION:Premier League Reserve\, ROUND 12\nArrive 9:00 AM for warm-up\
+ nMap: https://maps.google.com/?q=-37.24021\,174.724472
+GEO:-37.24021;174.724472
+LOCATION:Howick College: Field 1\, Howick College
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Selwyn 2nd XI vs Mount Albert Grammar School (AWAY)
+DTSTART;TZID=Pacific/Auckland:20260815T100000
+DTEND;TZID=Pacific/Auckland:20260815T120000
+UID:selwyn-2ndxi-fixture-6333918@selwyn-football-watcher.github.io
+SEQUENCE:0
+DESCRIPTION:Premier League Reserve\, ROUND 13\nArrive 9:00 AM for warm-up\
+ nMap: https://maps.google.com/?q=-36.88709\,174.722076
+GEO:-36.88709;174.722076
+LOCATION:Mt Albert Grammar School: Field 1\, Mount Albert Grammar School F
+ arm
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Selwyn 2nd XI vs Auckland Grammar School (HOME)
+DTSTART;TZID=Pacific/Auckland:20260822T100000
+DTEND;TZID=Pacific/Auckland:20260822T120000
+UID:selwyn-2ndxi-fixture-6333921@selwyn-football-watcher.github.io
+SEQUENCE:0
+DESCRIPTION:Premier League Reserve\, ROUND 14\nArrive 9:00 AM for warm-up
+GEO:-36.8626137;174.84021
+LOCATION:Selwyn College: Field 1\, Selwyn College
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Selwyn 2nd XI Training
+DTSTART;TZID=Pacific/Auckland:20260507T153000
+DTEND;TZID=Pacific/Auckland:20260507T163000
+UID:selwyn-2ndxi-training-2026@selwyn-football-watcher.github.io
+RRULE:FREQ=WEEKLY;UNTIL=20260827T153000;BYDAY=TH
+DESCRIPTION:Weekly training — Selwyn 2nd XI\nCoach: Will Litchfield
+LOCATION:Selwyn College\, Back Field
+END:VEVENT
+END:VCALENDAR
