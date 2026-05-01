@@ -8,13 +8,21 @@ on:
   workflow_dispatch:
     inputs:
       test_mode:
-        description: "Run in test mode (sends [TEST] emails, no git commit)"
+        description: "Test mode — [TEST] emails, no commit, no TeamReach posts"
         required: false
         default: "false"
         type: choice
         options:
-          - "true"
           - "false"
+          - "true"
+      post_teamreach:
+        description: "Post messages to TeamReach (review email first, then tick this)"
+        required: false
+        default: "false"
+        type: choice
+        options:
+          - "false"
+          - "true"
 
 permissions:
   contents: write
@@ -40,12 +48,17 @@ jobs:
         env:
           GMAIL_USER: ${{ secrets.GMAIL_USER }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          TEAMREACH_UID: ${{ secrets.TEAMREACH_UID }}
+          TEAMREACH_TOKEN: ${{ secrets.TEAMREACH_TOKEN }}
         run: |
+          ARGS="morning"
           if [ "${{ github.event.inputs.test_mode }}" = "true" ]; then
-            python -m watcher.main morning --test
-          else
-            python -m watcher.main morning
+            ARGS="$ARGS --test"
           fi
+          if [ "${{ github.event.inputs.post_teamreach }}" = "true" ]; then
+            ARGS="$ARGS --post-teamreach"
+          fi
+          python -m watcher.main $ARGS
 
       - name: Push updated files
         if: ${{ github.event.inputs.test_mode != 'true' }}

@@ -15,6 +15,8 @@ set -e
 REPO_NAME="selwyn-football-watcher"
 GMAIL_USER="nickmackesonsmith@gmail.com"
 GMAIL_APP_PASSWORD="vaqu jaoh afzs jyni"   # ← rotate this after setup!
+TEAMREACH_UID="3594459"
+TEAMREACH_TOKEN="TnlCE29K9xcRHlAMHsCVbt1EDXYQ4T4xnMhx2d0fnePjiaOhUrMH4COqN9Uc8yJCFSkc"
 
 echo ""
 echo "╔══════════════════════════════════════════════════════╗"
@@ -105,7 +107,15 @@ gh secret set GMAIL_APP_PASSWORD \
   --repo "$GITHUB_USERNAME/$REPO_NAME" \
   --body "$GMAIL_APP_PASSWORD"
 
-echo "  ✓ Secrets set"
+gh secret set TEAMREACH_UID \
+  --repo "$GITHUB_USERNAME/$REPO_NAME" \
+  --body "$TEAMREACH_UID"
+
+gh secret set TEAMREACH_TOKEN \
+  --repo "$GITHUB_USERNAME/$REPO_NAME" \
+  --body "$TEAMREACH_TOKEN"
+
+echo "  ✓ Secrets set (Gmail + TeamReach)"
 
 # ── Step 7: Enable GitHub Pages ──────────────────────────────
 echo ""

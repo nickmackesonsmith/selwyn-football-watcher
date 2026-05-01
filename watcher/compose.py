@@ -330,6 +330,7 @@ def build_email_body(
     run_type: str,  # "morning" or "evening"
     today: date | None = None,
     test_mode: bool = False,
+    post_statuses: list[tuple[str, str, bool]] | None = None,
 ) -> str | None:
     """
     Build the full email body for a team's daily brief.
@@ -376,12 +377,25 @@ def build_email_body(
 
     # --- Today's posts ---
     if posts:
+        # Use statuses if provided (indicates whether TR post succeeded)
+        statuses = {heading: ok for heading, _, ok in (post_statuses or [])}
         for heading, post in posts:
             group_name = team["teamreach_group_name"]
+            posted_ok = statuses.get(heading)
+            if posted_ok is True:
+                status_line = "✓ Posted to TeamReach"
+            elif posted_ok is False:
+                status_line = f"⚠️ TeamReach post failed — paste manually into \"{group_name}\""
+            else:
+                # None = not attempted (manual review mode)
+                status_line = (
+                    f"⏸ Not posted yet — if this looks right, go to Actions → "
+                    f"Run workflow → set 'Post to TeamReach' = true"
+                )
             sections.append(
                 f"---\n"
                 f"**{heading}**\n"
-                f"_(paste into \"{group_name}\")_\n\n"
+                f"{status_line}\n\n"
                 f"```\n{post}\n```"
             )
     else:
