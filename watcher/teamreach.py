@@ -65,7 +65,12 @@ def _request(
 
         ct = resp.headers.get("Content-Type", "")
         if "json" in ct:
-            return resp.json()
+            result = resp.json()
+            # Some endpoints (e.g. group_events_create.php) return JSON null on
+            # success — treat that as rc=0 rather than propagating None upward.
+            if result is None:
+                return {"rc": 0}
+            return result
         # Some endpoints return XML (e.g. push registration) — treat as success
         return {"rc": 0, "raw": resp.text}
 
@@ -193,7 +198,13 @@ def create_event(
     if data.get("rc", -1) != 0:
         raise TeamReachError(f"create_event failed (rc={data.get('rc')}): {data}")
     eid = str(data.get("eid", ""))
-    logger.info("Created event in group %s → eid=%s %r", group_id, eid, title)
+    if not eid:
+        # TR sometimes returns null/empty body on successful event creation
+        # (observed in prod May 2026). Log a warning so we know to watch for it,
+        # but don't crash — the event was likely created successfully.
+        logger.warning("create_event: API returned no eid for group=%s title=%r — event may still exist", group_id, title)
+    else:
+        logger.info("Created event in group %s → eid=%s %r", group_id, eid, title)
     return eid
 
 
