@@ -92,8 +92,8 @@
     "Status": 2,
     "CssName": "fixture-confirmed",
     "ResultStatus": 0,
-    "HomeScore": null,
-    "AwayScore": null,
+    "HomeScore": "0",
+    "AwayScore": "7",
     "CustomScoreDisplay": "",
     "InGame": false,
     "IsSetScoring": false,
@@ -748,5 +748,22 @@
     "InGame": false,
     "IsSetScoring": false,
     "IsScorer": false
+  },
+  "_teamreach": {
+    "6333868": "",
+    "6333871": "",
+    "6333877": "",
+    "6333882": "",
+    "6333884": "",
+    "6333890": "",
+    "6333893": "",
+    "6333896": "",
+    "6333899": "",
+    "6333905": "",
+    "6333910": "",
+    "6333912": "",
+    "6333918": "",
+    "6333921": "",
+    "6595709": ""
   }
 }
