@@ -17,6 +17,9 @@ TEAMS = {
         "grade_id": 712053,
         "comp_ids": [12756, 12758],
         "include_van_note_for_school_day_aways": True,
+        # Update after each game with first names of who ran the line, e.g. "Sarah and Mike"
+        # Set back to None once acknowledged in the next volunteer ask post.
+        "last_volunteers": None,
     },
     "13a": {
         "display_name": "Selwyn 13A Boys",
@@ -32,5 +35,8 @@ TEAMS = {
         "grade_id": 712067,
         "comp_ids": [12756, 12758],
         "include_van_note_for_school_day_aways": False,
+        # Update after each game with first names of who ran the line, e.g. "Sarah and Mike"
+        # Set back to None once acknowledged in the next volunteer ask post.
+        "last_volunteers": None,
     },
 }

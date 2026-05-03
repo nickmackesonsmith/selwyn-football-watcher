@@ -24,10 +24,11 @@ with post_teamreach=True when he's happy with what it will send.
 """
 
 import argparse
+import json
 import logging
 import subprocess
 import sys
-from datetime import date, datetime, timedelta
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from typing import Optional
 
@@ -51,6 +52,7 @@ from .sporty import (
     opponent_name,
 )
 from .teams import TEAMS
+from .templates import fixture_announcement, volunteer_ask, day_before_reminder
 from . import teamreach as tr
 
 logging.basicConfig(
@@ -260,6 +262,7 @@ def _commit_changes(test_mode: bool) -> None:
              "docs/fixtures_2ndxi.ics",
              "docs/fixtures_13a.ics",
              "docs/index.html",
+             "docs/hub-data.json",
              ],
             check=True, capture_output=True,
         )
@@ -399,13 +402,19 @@ def run(run_type: str, test_mode: bool = False, post_teamreach: bool = False) ->
                 errors.append(f"Daily email failed for {team_key}: {exc}")
                 logger.error("Daily email failed for %s: %s", team_key, exc)
 
-    # 6. Regenerate .ics and schedule docs
+    # 6. Regenerate .ics, schedule docs, and hub data
     try:
         write_ics_files(all_fixtures, DOCS_DIR)
         _write_index_html()
     except Exception as exc:
         logger.error("ICS generation failed: %s", exc)
         errors.append(f"ICS generation failed: {exc}")
+
+    try:
+        write_hub_data(all_fixtures, tr_map)
+    except Exception as exc:
+        logger.error("Hub data generation failed: %s", exc)
+        errors.append(f"Hub data generation failed: {exc}")
 
     try:
         write_schedule_files(all_fixtures, REPO_ROOT)
@@ -425,6 +434,139 @@ def run(run_type: str, test_mode: bool = False, post_teamreach: bool = False) ->
         )
 
     logger.info("=== Run complete ===")
+
+
+SELWYN_ORG_ID = 11255
+GRADE_TO_TEAM = {712067: "13a", 712053: "2ndxi"}
+
+
+def _normalise_fixture_for_hub(f: dict, tr_map: dict) -> dict:
+    """Convert a raw Sporty fixture into a hub-friendly dict."""
+    grade_id = f.get("GradeId")
+    team_key = GRADE_TO_TEAM.get(grade_id, "unknown")
+    team = TEAMS.get(team_key, {})
+    home_org = f.get("HomeOrganisationId")
+    away_org = f.get("AwayOrganisationId")
+    home = (home_org == SELWYN_ORG_ID)
+    opponent = f.get("AwayOrgName" if home else "HomeOrgName", "Unknown")
+
+    ko_raw = f.get("From", "")
+    ko_iso = ko_raw + "+12:00" if ko_raw and "+" not in ko_raw else ko_raw
+
+    hs = f.get("HomeScore")
+    as_ = f.get("AwayScore")
+    result = None
+    if hs not in (None, "") and as_ not in (None, ""):
+        hs, as_ = int(hs), int(as_)
+        my = hs if home else as_
+        opp = as_ if home else hs
+        result = f"Won {my}–{opp}" if my > opp else (f"Drew {my}–{opp}" if my == opp else f"Lost {my}–{opp}")
+
+    fid = str(f.get("Id", ""))
+    return {
+        "id":           fid,
+        "team_key":     team_key,
+        "display_name": team.get("display_name", team_key),
+        "ko_iso":       ko_iso,
+        "opponent":     opponent,
+        "home_away":    "Home" if home else "Away",
+        "venue":        f.get("VenueName", "TBC"),
+        "round":        f.get("RoundName", ""),
+        "grade":        f.get("GradeName", ""),
+        "in_teamreach": fid in tr_map,
+        "tr_event_id":  tr_map.get(fid),
+        "result":       result,
+    }
+
+
+def _build_hub_schedule(raw_fixtures: list[dict]) -> list[dict]:
+    """Generate scheduled post items for every fixture in the coming 12 weeks."""
+    today = date.today()
+    cutoff = today - timedelta(days=14)
+    schedule = []
+
+    for f in raw_fixtures:
+        grade_id = f.get("GradeId")
+        team_key = GRADE_TO_TEAM.get(grade_id)
+        if team_key not in TEAMS:
+            continue
+
+        ko_raw = f.get("From", "")
+        ko_iso = ko_raw + "+12:00" if ko_raw and "+" not in ko_raw else ko_raw
+        try:
+            ko_dt = datetime.fromisoformat(ko_iso)
+            ko_date = ko_dt.date()
+        except Exception:
+            continue
+
+        if ko_date < cutoff:
+            continue
+
+        group_id = tr.GROUPS.get(team_key, "")
+        fid = str(f.get("Id", ""))
+
+        for post_type, label, gen_fn in [
+            ("fixture_announcement", "Fixture Announcement", fixture_announcement),
+            ("volunteer_ask",        "Volunteer Ask",        volunteer_ask),
+            ("day_before_reminder",  "Day-Before Reminder",  day_before_reminder),
+        ]:
+            if post_type == "fixture_announcement":
+                sched_date = ko_date - timedelta(days=ko_date.weekday())  # Monday
+            elif post_type == "volunteer_ask":
+                sched_date = ko_date - timedelta(days=2)
+            else:
+                sched_date = ko_date - timedelta(days=1)
+
+            try:
+                text = gen_fn(f, team_key)
+            except Exception as exc:
+                text = f"[Template error: {exc}]"
+
+            schedule.append({
+                "team_key":          team_key,
+                "group_id":          group_id,
+                "fixture_id":        fid,
+                "opponent":          f.get("AwayOrgName" if f.get("HomeOrganisationId") == SELWYN_ORG_ID else "HomeOrgName", "Unknown"),
+                "ko_date":           ko_date.isoformat(),
+                "ko_display":        ko_dt.strftime("%-d %b, %-I:%M %p").replace("AM", "am").replace("PM", "pm"),
+                "scheduled_iso":     sched_date.isoformat(),
+                "scheduled_display": sched_date.strftime("%-d %b"),
+                "type":              post_type,
+                "label":             label,
+                "text":              text,
+            })
+
+    return schedule
+
+
+def write_hub_data(all_fixtures: list[dict], tr_map: dict) -> None:
+    """
+    Generate docs/hub-data.json with live fixture, schedule, and message data.
+    This file is served via GitHub Pages and consumed by the Cowork artifact.
+    """
+    DOCS_DIR.mkdir(parents=True, exist_ok=True)
+
+    fixtures = [_normalise_fixture_for_hub(f, tr_map) for f in all_fixtures]
+    schedule = _build_hub_schedule(all_fixtures)
+
+    messages: dict[str, list] = {}
+    for key, gid in tr.GROUPS.items():
+        try:
+            messages[key] = tr.list_messages(gid)
+        except Exception as exc:
+            messages[key] = []
+            logger.warning("Could not fetch TR messages for %s: %s", key, exc)
+
+    payload = {
+        "fetched_at": datetime.now(timezone.utc).isoformat(),
+        "fixtures":   fixtures,
+        "schedule":   schedule,
+        "messages":   messages,
+    }
+
+    out_path = DOCS_DIR / "hub-data.json"
+    out_path.write_text(json.dumps(payload, ensure_ascii=False), encoding="utf-8")
+    logger.info("Wrote hub-data.json (%d fixtures, %d schedule items)", len(fixtures), len(schedule))
 
 
 def _write_index_html() -> None:

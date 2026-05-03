@@ -105,25 +105,34 @@ def fixture_announcement(fixture: dict, team_key: str) -> str:
 def volunteer_ask(fixture: dict, team_key: str) -> str:
     """
     Template 2 — Volunteer ask (2 days before kick-off).
+
+    Asks for two parents to run the line (one per half). Optionally
+    acknowledges the previous game's volunteers if `last_volunteers` is
+    set in the team config — update that field in teams.py after each game.
     """
     team = TEAMS[team_key]
     ko = kickoff_dt(fixture)
     opp = opponent_name(fixture)
     day = _day_label(ko)
-    display = team["display_name"]
     audience = team["audience"]
+
+    # Acknowledge last game's volunteers if recorded
+    thanks = ""
+    last_volunteers = team.get("last_volunteers")
+    if last_volunteers:
+        thanks = f"Thanks to {last_volunteers} who ran the line last time 👏\n"
 
     if audience == "players":
         post = (
             f"Volunteers needed — {day}'s game vs {opp}\n"
-            f"Two parents needed to help out please — one to referee a half, one to run the line.\n"
-            f"If you can help, please reply here. Cheers."
+            f"{thanks}"
+            f"We need two parents willing to run the line for a half each — if you can help, please reply here. Cheers."
         )
     else:
         post = (
             f"Volunteers needed — {day}'s game vs {opp}\n"
-            f"Two parents needed to help out please — one to referee a half, one to run the line.\n"
-            f"If you can help please reply here. Cheers team."
+            f"{thanks}"
+            f"We need two parents willing to run the line for a half each — if you can help please reply here. Cheers team."
         )
 
     assert len(post) <= 800, f"Volunteer ask too long ({len(post)} chars)"

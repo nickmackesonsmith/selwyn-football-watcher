@@ -91,6 +91,84 @@ def _base_params(uid: Optional[str] = None, token: Optional[str] = None) -> dict
 # Messages
 # ---------------------------------------------------------------------------
 
+def list_messages(
+    group_id: str,
+    limit: int = 20,
+    uid: Optional[str] = None,
+    token: Optional[str] = None,
+) -> list[dict]:
+    """
+    Fetch recent messages from a group feed.
+
+    Returns a list of raw message dicts (MessageId, Message, FirstName,
+    LastName, CreatedOnTimeStamp, TotalLikes, grpmsgcommentstotal,
+    Photo, Attachment, UserId, …).
+    """
+    from datetime import timezone, timedelta
+
+    p = _base_params(uid, token)
+    p.update({
+        "gid": group_id,
+        "ts": "0",
+    })
+    data = _request("group_messages.php", p)
+    raw = data.get("messages") or []
+
+    NZ = timezone(timedelta(hours=12))
+    from datetime import date as _date
+
+    def _normalise(m: dict) -> dict:
+        fname = m.get("FirstName") or ""
+        lname = m.get("LastName") or ""
+        author = f"{fname} {lname}".strip() or "Unknown"
+        is_me = str(m.get("UserId", "")) == (_DEFAULT_UID or "3594459")
+
+        ts_unix = m.get("CreatedOnTimeStamp")
+        if ts_unix:
+            try:
+                from datetime import datetime as _dt
+                ts_dt = _dt.fromtimestamp(int(ts_unix), tz=timezone.utc).astimezone(NZ)
+                today_nz = _dt.now(NZ).date()
+                if ts_dt.date() == today_nz:
+                    timestamp = "Today, " + ts_dt.strftime("%-I:%M %p")
+                elif ts_dt.date() == today_nz - timedelta(days=1):
+                    timestamp = "Yesterday, " + ts_dt.strftime("%-I:%M %p")
+                else:
+                    timestamp = ts_dt.strftime("%-d %b, %-I:%M %p")
+            except Exception:
+                timestamp = m.get("CreatedOn", "")
+        else:
+            timestamp = m.get("CreatedOn", "")
+
+        photo = m.get("Photo") or ""
+        att_url = m.get("Attachment") or ""
+        attach = None
+        if photo:
+            attach = {"type": "image", "url": photo, "filename": "photo"}
+        elif att_url:
+            fn = att_url.lower()
+            if any(fn.endswith(ext) for ext in (".jpg", ".jpeg", ".png", ".gif", ".webp")):
+                attach = {"type": "image", "url": att_url, "filename": "photo"}
+            elif fn.endswith(".pdf"):
+                fname_part = att_url.split("/")[-1].split("_____")[-1] if "_____" in att_url else att_url.split("/")[-1]
+                attach = {"type": "pdf", "url": att_url, "filename": fname_part}
+            else:
+                attach = {"type": "file", "url": att_url, "filename": att_url.split("/")[-1]}
+
+        return {
+            "msid":      str(m.get("MessageId", "")),
+            "message":   str(m.get("Message") or "").strip(),
+            "author":    author,
+            "is_me":     is_me,
+            "timestamp": timestamp,
+            "likes":     int(m.get("TotalLikes") or 0),
+            "comments":  int(m.get("grpmsgcommentstotal") or 0),
+            "attach":    attach,
+        }
+
+    return [_normalise(m) for m in raw[:limit]]
+
+
 def post_message(
     group_id: str,
     message: str,
