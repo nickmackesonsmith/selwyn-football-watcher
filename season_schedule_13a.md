@@ -14,7 +14,7 @@ Season runs May–August 2026
 
 ---
 
-## Fixtures (1 published)
+## Fixtures (2 published)
 
 ### Sat 2 May 2026 — vs Howick College (HOME)
 
@@ -27,6 +27,24 @@ Season runs May–August 2026
 | **Venue** | Selwyn College: Field 1 |
 | **Address** | Selwyn College |
 | **Grade** | 13A2 — ROUND 1 |
+| **Status** | Confirmed |
+
+_TeamReach toggles: Forecast / Who's Available / Take Attendance / Reminder (1 day before)_
+
+---
+
+### Sat 9 May 2026 — vs Kristin School (AWAY)
+
+| Field | Value |
+|-------|-------|
+| **Title** | `Selwyn 13A Boys vs Kristin School (AWAY)` |
+| **Date** | Saturday, 9 May 2026 |
+| **Kick-off** | 9:00 AM |
+| **Arrival** | 8:00 AM (warm-up) |
+| **Venue** | Kristin School: Field 1 |
+| **Address** | Kristin School |
+| **Map** | [https://maps.google.com/?q=-36.7426376,174.691315](https://maps.google.com/?q=-36.7426376,174.691315) |
+| **Grade** | 13A2 — ROUND 2 |
 | **Status** | Confirmed |
 
 _TeamReach toggles: Forecast / Who's Available / Take Attendance / Reminder (1 day before)_

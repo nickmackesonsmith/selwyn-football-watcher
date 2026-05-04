@@ -19,6 +19,18 @@ LOCATION:Selwyn College: Field 1\, Selwyn College
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
+SUMMARY:Selwyn 13A Boys vs Kristin School (AWAY)
+DTSTART;TZID=Pacific/Auckland:20260509T090000
+DTEND;TZID=Pacific/Auckland:20260509T110000
+UID:selwyn-13a-fixture-6649614@selwyn-football-watcher.github.io
+SEQUENCE:0
+DESCRIPTION:13A2\, ROUND 2\nArrive 8:00 AM for warm-up\nMap: https://maps.
+ google.com/?q=-36.7426376\,174.691315
+GEO:-36.7426376;174.691315
+LOCATION:Kristin School: Field 1\, Kristin School
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
 SUMMARY:Selwyn 13A Boys Training
 DTSTART;TZID=Pacific/Auckland:20260505T070000
 DTEND;TZID=Pacific/Auckland:20260505T080000
