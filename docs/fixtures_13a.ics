@@ -31,6 +31,138 @@ LOCATION:Kristin School: Field 1\, Kristin School
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
+SUMMARY:Selwyn 13A Boys vs Westlake Boys High School (HOME)
+DTSTART;TZID=Pacific/Auckland:20260516T090000
+DTEND;TZID=Pacific/Auckland:20260516T110000
+UID:selwyn-13a-fixture-6649621@selwyn-football-watcher.github.io
+SEQUENCE:0
+DESCRIPTION:13A2\, ROUND 3\nArrive 8:00 AM for warm-up
+GEO:-36.8626137;174.84021
+LOCATION:Selwyn College: Field 2\, Selwyn College
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Selwyn 13A Boys vs Sacred Heart College (Auckland) (AWAY)
+DTSTART;TZID=Pacific/Auckland:20260523T090000
+DTEND;TZID=Pacific/Auckland:20260523T110000
+UID:selwyn-13a-fixture-6649627@selwyn-football-watcher.github.io
+SEQUENCE:0
+DESCRIPTION:13A2\, ROUND 4\nArrive 8:00 AM for warm-up\nMap: https://maps.
+ google.com/?q=-36.8688049\,174.8717
+GEO:-36.8688049;174.8717
+LOCATION:Sacred Heart College: Field 1\, 250 West Tamaki Road\, Glendowie\
+ , Auckland\, 1071
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Selwyn 13A Boys vs Takapuna Grammar School (AWAY)
+DTSTART;TZID=Pacific/Auckland:20260606T090000
+DTEND;TZID=Pacific/Auckland:20260606T110000
+UID:selwyn-13a-fixture-6649639@selwyn-football-watcher.github.io
+SEQUENCE:0
+DESCRIPTION:13A2\, ROUND 5\nArrive 8:00 AM for warm-up\nMap: https://maps.
+ google.com/?q=-36.8006172\,174.788483
+GEO:-36.8006172;174.788483
+LOCATION:Takapuna Grammar School: Field 3\, Takapuna Grammar School
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Selwyn 13A Boys vs One Tree Hill College (HOME)
+DTSTART;TZID=Pacific/Auckland:20260613T090000
+DTEND;TZID=Pacific/Auckland:20260613T110000
+UID:selwyn-13a-fixture-6650046@selwyn-football-watcher.github.io
+SEQUENCE:0
+DESCRIPTION:13A2\, ROUND 6\nArrive 8:00 AM for warm-up
+GEO:-36.8626137;174.84021
+LOCATION:Selwyn College: Field 1\, Selwyn College
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Selwyn 13A Boys vs Glendowie College (HOME)
+DTSTART;TZID=Pacific/Auckland:20260620T090000
+DTEND;TZID=Pacific/Auckland:20260620T110000
+UID:selwyn-13a-fixture-6650055@selwyn-football-watcher.github.io
+SEQUENCE:0
+DESCRIPTION:13A2\, ROUND 7\nArrive 8:00 AM for warm-up
+GEO:-36.8626137;174.84021
+LOCATION:Selwyn College: Field 2\, Selwyn College
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Selwyn 13A Boys vs Mount Roskill Grammar School (AWAY)
+DTSTART;TZID=Pacific/Auckland:20260627T090000
+DTEND;TZID=Pacific/Auckland:20260627T110000
+UID:selwyn-13a-fixture-6650061@selwyn-football-watcher.github.io
+SEQUENCE:0
+DESCRIPTION:13A2\, ROUND 8\nArrive 8:00 AM for warm-up\nMap: https://maps.
+ google.com/?q=-36.91258\,174.747818
+GEO:-36.91258;174.747818
+LOCATION:Mt Roskill Grammar School: Field 1\, Mount Roskill Grammar
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Selwyn 13A Boys vs Auckland Grammar School (AWAY)
+DTSTART;TZID=Pacific/Auckland:20260725T090000
+DTEND;TZID=Pacific/Auckland:20260725T110000
+UID:selwyn-13a-fixture-6650067@selwyn-football-watcher.github.io
+SEQUENCE:0
+DESCRIPTION:13A2\, ROUND 9\nArrive 8:00 AM for warm-up\nMap: https://maps.
+ google.com/?q=-36.86878\,174.769379
+GEO:-36.86878;174.769379
+LOCATION:Auckland Grammar School: Field 1\, Auckland Grammar School Memori
+ al
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Selwyn 13A Boys vs Saint Kentigern College (AWAY)
+DTSTART;TZID=Pacific/Auckland:20260801T090000
+DTEND;TZID=Pacific/Auckland:20260801T110000
+UID:selwyn-13a-fixture-6650073@selwyn-football-watcher.github.io
+SEQUENCE:0
+DESCRIPTION:13A2\, ROUND 10\nArrive 8:00 AM for warm-up\nMap: https://maps
+ .google.com/?q=-36.9097137\,174.875031
+GEO:-36.9097137;174.875031
+LOCATION:Saint Kentigern College: Field 2\, Saint Kentigern College
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Selwyn 13A Boys vs Liston College (AWAY)
+DTSTART;TZID=Pacific/Auckland:20260808T090000
+DTEND;TZID=Pacific/Auckland:20260808T110000
+UID:selwyn-13a-fixture-6650082@selwyn-football-watcher.github.io
+SEQUENCE:0
+DESCRIPTION:13A2\, ROUND 11\nArrive 8:00 AM for warm-up\nMap: https://maps
+ .google.com/?q=-36.8662834\,174.621353
+GEO:-36.8662834;174.621353
+LOCATION:Liston College: Field 1\, 69 Rathgar Road\, Henderson\, Auckland\
+ , 0610
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Selwyn 13A Boys vs Auckland Grammar School (AWAY)
+DTSTART;TZID=Pacific/Auckland:20260815T090000
+DTEND;TZID=Pacific/Auckland:20260815T110000
+UID:selwyn-13a-fixture-6650090@selwyn-football-watcher.github.io
+SEQUENCE:0
+DESCRIPTION:13A2\, ROUND 12\nArrive 8:00 AM for warm-up\nMap: https://maps
+ .google.com/?q=-36.86878\,174.769379
+GEO:-36.86878;174.769379
+LOCATION:Auckland Grammar School: Field 1\, Auckland Grammar School Memori
+ al
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Selwyn 13A Boys vs Mount Albert Grammar School (HOME)
+DTSTART;TZID=Pacific/Auckland:20260822T090000
+DTEND;TZID=Pacific/Auckland:20260822T110000
+UID:selwyn-13a-fixture-6650098@selwyn-football-watcher.github.io
+SEQUENCE:0
+DESCRIPTION:13A2\, ROUND 13\nArrive 8:00 AM for warm-up
+GEO:-36.8626137;174.84021
+LOCATION:Selwyn College: Field 1\, Selwyn College
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
 SUMMARY:Selwyn 13A Boys Training
 DTSTART;TZID=Pacific/Auckland:20260505T070000
 DTEND;TZID=Pacific/Auckland:20260505T080000
