@@ -76,9 +76,9 @@ _TeamReach toggles: Forecast / Who's Available / Take Attendance / Reminder (1 d
 | **Date** | Saturday, 23 May 2026 |
 | **Kick-off** | 9:00 AM |
 | **Arrival** | 8:00 AM (warm-up) |
-| **Venue** | Sacred Heart College: Field 1 |
-| **Address** | 250 West Tamaki Road, Glendowie, Auckland, 1071 |
-| **Map** | [https://maps.google.com/?q=-36.8688049,174.8717](https://maps.google.com/?q=-36.8688049,174.8717) |
+| **Venue** | Crossfield Reserve: Field 2 |
+| **Address** | 83 Crossfield Road, Glendowie, Auckland 1071 |
+| **Map** | [https://maps.google.com/?q=0.0,0.0](https://maps.google.com/?q=0.0,0.0) |
 | **Grade** | 13A2 — ROUND 4 |
 | **Status** | Confirmed |
 

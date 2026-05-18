@@ -48,10 +48,9 @@ DTEND;TZID=Pacific/Auckland:20260523T110000
 UID:selwyn-13a-fixture-6649627@selwyn-football-watcher.github.io
 SEQUENCE:0
 DESCRIPTION:13A2\, ROUND 4\nArrive 8:00 AM for warm-up\nMap: https://maps.
- google.com/?q=-36.8688049\,174.8717
-GEO:-36.8688049;174.8717
-LOCATION:Sacred Heart College: Field 1\, 250 West Tamaki Road\, Glendowie\
- , Auckland\, 1071
+ google.com/?q=0.0\,0.0
+LOCATION:Crossfield Reserve: Field 2\, 83 Crossfield Road\, Glendowie\, Au
+ ckland 1071
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
