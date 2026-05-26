@@ -155,17 +155,17 @@ _TeamReach toggles: Forecast / Who's Available / Take Attendance / Reminder (1 d
 
 ---
 
-### Sat 4 Jul 2026 — vs Westlake Boys High School (AWAY)
+### Fri 3 Jul 2026 — vs Westlake Boys High School (AWAY)
 
 | Field | Value |
 |-------|-------|
 | **Title** | `Selwyn 2nd XI vs Westlake Boys High School (AWAY)` |
-| **Date** | Saturday, 4 July 2026 |
-| **Kick-off** | 10:00 AM |
-| **Arrival** | 9:00 AM (warm-up) |
-| **Venue** | Westlake Boys High School: Field 1 |
-| **Address** | Westlake Boys High School |
-| **Map** | [https://maps.google.com/?q=-36.7773666,174.7495](https://maps.google.com/?q=-36.7773666,174.7495) |
+| **Date** | Friday, 3 July 2026 |
+| **Kick-off** | 4:00 PM |
+| **Arrival** | 3:00 PM (warm-up) |
+| **Venue** | North Harbour Stadium: Field 4 |
+| **Address** | North Harbour Stadium |
+| **Map** | [https://maps.google.com/?q=-36.722374,174.704971](https://maps.google.com/?q=-36.722374,174.704971) |
 | **Grade** | Premier League Reserve — ROUND 9 |
 | **Status** | Confirmed |
 

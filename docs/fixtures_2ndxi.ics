@@ -101,14 +101,14 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:Selwyn 2nd XI vs Westlake Boys High School (AWAY)
-DTSTART;TZID=Pacific/Auckland:20260704T100000
-DTEND;TZID=Pacific/Auckland:20260704T120000
+DTSTART;TZID=Pacific/Auckland:20260703T160000
+DTEND;TZID=Pacific/Auckland:20260703T180000
 UID:selwyn-2ndxi-fixture-6333899@selwyn-football-watcher.github.io
 SEQUENCE:0
-DESCRIPTION:Premier League Reserve\, ROUND 9\nArrive 9:00 AM for warm-up\n
- Map: https://maps.google.com/?q=-36.7773666\,174.7495
-GEO:-36.7773666;174.7495
-LOCATION:Westlake Boys High School: Field 1\, Westlake Boys High School
+DESCRIPTION:Premier League Reserve\, ROUND 9\nArrive 3:00 PM for warm-up\n
+ Map: https://maps.google.com/?q=-36.722374\,174.704971
+GEO:-36.722374;174.704971
+LOCATION:North Harbour Stadium: Field 4\, North Harbour Stadium
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
