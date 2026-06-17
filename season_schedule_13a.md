@@ -129,7 +129,7 @@ _TeamReach toggles: Forecast / Who's Available / Take Attendance / Reminder (1 d
 | **Date** | Saturday, 20 June 2026 |
 | **Kick-off** | 9:00 AM |
 | **Arrival** | 8:00 AM (warm-up) |
-| **Venue** | Selwyn College: Field 2 |
+| **Venue** | Selwyn College: Field 1 |
 | **Address** | Selwyn College |
 | **Grade** | 13A2 — ROUND 7 |
 | **Status** | Confirmed |
