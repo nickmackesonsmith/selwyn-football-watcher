@@ -218,7 +218,7 @@ _TeamReach toggles: Forecast / Who's Available / Take Attendance / Reminder (1 d
 | **Date** | Saturday, 15 August 2026 |
 | **Kick-off** | 9:00 AM |
 | **Arrival** | 8:00 AM (warm-up) |
-| **Venue** | Auckland Grammar School: Field 1 |
+| **Venue** | Auckland Grammar School: Field 2 |
 | **Address** | Auckland Grammar School Memorial |
 | **Map** | [https://maps.google.com/?q=-36.86878,174.769379](https://maps.google.com/?q=-36.86878,174.769379) |
 | **Grade** | 13A2 — ROUND 12 |
