@@ -128,8 +128,8 @@ DTSTART;TZID=Pacific/Auckland:20260801T100000
 DTEND;TZID=Pacific/Auckland:20260801T120000
 UID:selwyn-2ndxi-fixture-6333910@selwyn-football-watcher.github.io
 SEQUENCE:0
-DESCRIPTION:Premier League Reserve\, ROUND 11\nArrive 9:00 AM for warm-up\
- nMap: https://maps.google.com/?q=-36.8006172\,174.788483
+DESCRIPTION:Premier League Reserve\, ROUND 11\nArrive 9:00 AM for warm-up
+ \nMap: https://maps.google.com/?q=-36.8006172\,174.788483
 GEO:-36.8006172;174.788483
 LOCATION:Takapuna Grammar School: Field 1\, Takapuna Grammar School
 STATUS:CONFIRMED
@@ -140,8 +140,8 @@ DTSTART;TZID=Pacific/Auckland:20260808T100000
 DTEND;TZID=Pacific/Auckland:20260808T120000
 UID:selwyn-2ndxi-fixture-6333912@selwyn-football-watcher.github.io
 SEQUENCE:0
-DESCRIPTION:Premier League Reserve\, ROUND 12\nArrive 9:00 AM for warm-up\
- nMap: https://maps.google.com/?q=-37.24021\,174.724472
+DESCRIPTION:Premier League Reserve\, ROUND 12\nArrive 9:00 AM for warm-up
+ \nMap: https://maps.google.com/?q=-37.24021\,174.724472
 GEO:-37.24021;174.724472
 LOCATION:Howick College: Field 1\, Howick College
 STATUS:CONFIRMED
@@ -152,8 +152,8 @@ DTSTART;TZID=Pacific/Auckland:20260815T100000
 DTEND;TZID=Pacific/Auckland:20260815T120000
 UID:selwyn-2ndxi-fixture-6333918@selwyn-football-watcher.github.io
 SEQUENCE:0
-DESCRIPTION:Premier League Reserve\, ROUND 13\nArrive 9:00 AM for warm-up\
- nMap: https://maps.google.com/?q=-36.88709\,174.722076
+DESCRIPTION:Premier League Reserve\, ROUND 13\nArrive 9:00 AM for warm-up
+ \nMap: https://maps.google.com/?q=-36.88709\,174.722076
 GEO:-36.88709;174.722076
 LOCATION:Mt Albert Grammar School: Field 1\, Mount Albert Grammar School F
  arm

@@ -133,8 +133,8 @@ SEQUENCE:0
 DESCRIPTION:13A2\, ROUND 11\nArrive 8:00 AM for warm-up\nMap: https://maps
  .google.com/?q=-36.8662834\,174.621353
 GEO:-36.8662834;174.621353
-LOCATION:Liston College: Field 1\, 69 Rathgar Road\, Henderson\, Auckland\
- , 0610
+LOCATION:Liston College: Field 1\, 69 Rathgar Road\, Henderson\, Auckland
+ \, 0610
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
