@@ -244,14 +244,14 @@ _TeamReach toggles: Forecast / Who's Available / Take Attendance / Reminder (1 d
 
 ---
 
-### Sat 22 Aug 2026 — vs Auckland Grammar School (HOME)
+### Fri 21 Aug 2026 — vs Auckland Grammar School (HOME)
 
 | Field | Value |
 |-------|-------|
 | **Title** | `Selwyn 2nd XI vs Auckland Grammar School (HOME)` |
-| **Date** | Saturday, 22 August 2026 |
-| **Kick-off** | 10:00 AM |
-| **Arrival** | 9:00 AM (warm-up) |
+| **Date** | Friday, 21 August 2026 |
+| **Kick-off** | 4:00 PM |
+| **Arrival** | 3:00 PM (warm-up) |
 | **Venue** | Selwyn College: Field 1 |
 | **Address** | Selwyn College |
 | **Grade** | Premier League Reserve — ROUND 14 |

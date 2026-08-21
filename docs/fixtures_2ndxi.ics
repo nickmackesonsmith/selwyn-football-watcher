@@ -161,11 +161,11 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:Selwyn 2nd XI vs Auckland Grammar School (HOME)
-DTSTART;TZID=Pacific/Auckland:20260822T100000
-DTEND;TZID=Pacific/Auckland:20260822T120000
+DTSTART;TZID=Pacific/Auckland:20260821T160000
+DTEND;TZID=Pacific/Auckland:20260821T180000
 UID:selwyn-2ndxi-fixture-6333921@selwyn-football-watcher.github.io
 SEQUENCE:0
-DESCRIPTION:Premier League Reserve\, ROUND 14\nArrive 9:00 AM for warm-up
+DESCRIPTION:Premier League Reserve\, ROUND 14\nArrive 3:00 PM for warm-up
 GEO:-36.8626137;174.84021
 LOCATION:Selwyn College: Field 1\, Selwyn College
 STATUS:CONFIRMED
