@@ -236,10 +236,9 @@ _TeamReach toggles: Forecast / Who's Available / Take Attendance / Reminder (1 d
 | **Date** | Saturday, 22 August 2026 |
 | **Kick-off** | 9:00 AM |
 | **Arrival** | 8:00 AM (warm-up) |
-| **Venue** | Selwyn College: Field 1 |
-| **Address** | Selwyn College |
+| **Venue** | Unallocated |
 | **Grade** | 13A2 — ROUND 13 |
-| **Status** | Confirmed |
+| **Status** | Defaulted |
 
 _TeamReach toggles: Forecast / Who's Available / Take Attendance / Reminder (1 day before)_
 

@@ -156,10 +156,9 @@ DTSTART;TZID=Pacific/Auckland:20260822T090000
 DTEND;TZID=Pacific/Auckland:20260822T110000
 UID:selwyn-13a-fixture-6650098@selwyn-football-watcher.github.io
 SEQUENCE:0
-DESCRIPTION:13A2\, ROUND 13\nArrive 8:00 AM for warm-up
-GEO:-36.8626137;174.84021
-LOCATION:Selwyn College: Field 1\, Selwyn College
-STATUS:CONFIRMED
+DESCRIPTION:13A2\, ROUND 13\nArrive 8:00 AM for warm-up\nStatus: Defaulted
+LOCATION:Unallocated\, Unallocated
+STATUS:TENTATIVE
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:Selwyn 13A Boys Training
